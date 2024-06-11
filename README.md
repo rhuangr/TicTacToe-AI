@@ -4,7 +4,7 @@ This is my first project which involves using artificial intelligence to play ti
 
 TTT-minimax.py is an implementation of the minimax algorithm.
 
-TTT-value-function.py follows the algorithm described in the book ***Reinforcement Learning An Introduction by Barto and Sutton***. The algorithm trains an agent against an opponent with a fixed policy: always win if possible, always prevent a winning move, otherwise take a random move.
+TTT-value-function.py follows the algorithm described in the book ***Reinforcement Learning An Introduction by Barto and Sutton*** chapter 1.5. The algorithm trains an agent against an opponent with a fixed policy: always win if possible, always prevent a winning move, otherwise take a random move.
 > **Note:** The best move generated is only the best move given this fixed opponent
 
 ## Installation
