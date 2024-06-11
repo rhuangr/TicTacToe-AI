@@ -1,38 +1,35 @@
 import copy
 
-class gameStateTree: 
+class boardState: 
     
     def __init__(self, currentBoard):
         self.currentBoard = currentBoard
         self.possibleGameStates = []
         self.score = 0
         
-    def getPossibleGameStates(self, board, player):
+    def getPossibleGameStates(self, board, currentPlayer):
         for i in range(0,3):
             for j in range(0,3):
-                if (board[i][j] == "_" and player == "Max"): # 2 means theres no symbol on that box
+                if (board[i][j] == "_" and currentPlayer == "Max"):
                     newGameState = copy.deepcopy(board)
                     newGameState[i][j] = "X"
-                    self.possibleGameStates.append(gameStateTree(newGameState))
+                    self.possibleGameStates.append(boardState(newGameState))
                     
-                elif (board[i][j] == "_" and player == "Min"):
+                elif (board[i][j] == "_" and currentPlayer == "Min"):
                     newGameState = copy.deepcopy(board)
                     newGameState[i][j] = "O"
-                    self.possibleGameStates.append(gameStateTree(newGameState))
+                    self.possibleGameStates.append(boardState(newGameState))
         
         for gameState in self.possibleGameStates:   
             
-            isFinal, score = self.isTerminalState(gameState.currentBoard, player)
-            scores = []
+            isFinal, score = self.isTerminalState(gameState.currentBoard, currentPlayer)
             
             if isFinal:
                 gameState.score = score
             else:
-                gameState.getPossibleGameStates( gameState.currentBoard, "Max" if player == "Min" else "Min")
-        # player = "Max" if player == "Min" else "Min"
-
+                gameState.getPossibleGameStates( gameState.currentBoard, "Max" if currentPlayer == "Min" else "Min")
         
-        reward = max(state.score for state in self.possibleGameStates) if player == "Max" else min(state.score for state in self.possibleGameStates)
+        reward = max(state.score for state in self.possibleGameStates) if currentPlayer == "Max" else min(state.score for state in self.possibleGameStates)
 
         self.score = reward
 
@@ -77,8 +74,7 @@ TTTBoard = [["X", "O", "_"],
             ["_", "_", "O"]]
     
            
-x = gameStateTree(TTTBoard)
-x.getPossibleGameStates(x.currentBoard, "Min")
-
+x = boardState(TTTBoard)
+x.getPossibleGameStates(x.currentBoard, "Min") # "Min" or "Max" depending on whose turn it is Max=X Min=O
 printBoard(x)
 

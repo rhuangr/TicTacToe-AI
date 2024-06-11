@@ -170,7 +170,8 @@ def boardIsFilled(board):
 
 def printBoard(state):
     if state.value == 0.5:
-        print(f"{state.board[0]} Enemy action")
+        print("Enemy action")
+        print(f"{state.board[0]}")
     else:
         print(f"Agent took action [{state.i}][{state.j}]")
         print(f"{state.board[0]} Win%: {state.value}")
