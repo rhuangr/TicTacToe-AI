@@ -9,7 +9,7 @@ TTT-value-function.py follows the algorithm described in the book ***Reinforceme
 
 ## Installation
 1. Clone the repository
-2. Run the either of the individual python files
+2. Run the either of the individual python files.
 	*You can paste the following commands while in the cloned repository directory :thumbsup:
    `python TTT-minimax.py` or `python TTT-value-function.py`*
 ## Instructions
