@@ -1,11 +1,6 @@
-import math
 import copy
 
-TTTBoard = [["_", "O", "_"],
-            ["X", "O", "X"],
-            ["_", "_", "_"]]
-
-class gameStateTree: #node
+class gameStateTree: 
     
     def __init__(self, currentBoard):
         self.currentBoard = currentBoard
@@ -77,11 +72,13 @@ def printBoard(GS):
         print(state.currentBoard[2])
         print()
         
+TTTBoard = [["X", "O", "_"],
+            ["X", "X", "_"],
+            ["_", "_", "O"]]
     
            
 x = gameStateTree(TTTBoard)
-
-x.getPossibleGameStates(x.currentBoard, "Max")
+x.getPossibleGameStates(x.currentBoard, "Min")
 
 printBoard(x)
 
