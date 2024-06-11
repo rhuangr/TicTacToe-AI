@@ -169,7 +169,7 @@ def boardIsFilled(board):
 
 
 def printBoard(state):
-    if state.value == 0.5:
+    if state.player == "X":
         print("Enemy action")
         print(f"{state.board[0]}")
     else:
