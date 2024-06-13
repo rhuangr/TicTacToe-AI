@@ -9,12 +9,12 @@ TTT-value-function.py follows the algorithm described in the book ***Reinforceme
 
 ## Installation
 1. Clone the repository
-2. Run the either of the individual python files.
+2. Run either of the individual python files.
 	*You can paste the following commands while in the cloned repository directory :thumbsup:
    `python TTT-minimax.py` or `python TTT-value-function.py`*
 ## Instructions
 ### For minimax:
-1. To test specific boards, change the value of `TTTBoard` at the end of the code
-2. In the following line, set the current player to `"Max"` if the next move played will be X and `"Min"` elsewise.
+- To test specific boards, change the value of `TTTBoard` at the end of the code
+- In the following line, set the current player to `"Max"` if the next move played will be X and `"Min"` elsewise.
 ### For value function:
-1. In the last line `agent.train(episodes)`, change the value of episodes depending on the amount of games you wish to train the agent on 
+- In the last line `agent.train(episodes)`, change the value of episodes depending on the amount of games you wish to train the agent on 
